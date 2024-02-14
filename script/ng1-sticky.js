@@ -1,6 +1,11 @@
 (function($) {
     $.fn.isSticky = function() {
       var element = this;
+      // Vérifie si l'élément existe
+      if (element.length === 0) {
+        return this; // Sort de la fonction si l'élément n'existe pas
+      }
+      var element = this;
       var elementHeight = element.outerHeight();
       var parent = element.parent();
       var parentOffsetTop = parent.offset().top;
